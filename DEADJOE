@@ -1,0 +1,37 @@
+
+*** These modified files were found in JOE when it aborted on Tue Oct 29 21:39:52 2024
+*** JOE was aborted because the terminal closed
+
+*** File '/home/stu/cbb113131/hw/.git/COMMIT_EDITMSG'
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   ASCII.c
+#	new file:   DateUK2US.c
+#	new file:   HeronFormula.c
+#	new file:   Last3.c
+#	new file:   MemAddress.c
+#	new file:   MemSizeOfFloatings.c
+#	new file:   NumberConverter.c
+#	new file:   PhoneBill.c
+#	new file:   Rounded.c
+#	new file:   SquareMeter2Ping.c
+#
+
+*** File '(Unnamed)'
+test
+test
+test.cpp
+Hello.c
+/home/stu/cbb113131/hw/.git/COMMIT_EDITMSG
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
