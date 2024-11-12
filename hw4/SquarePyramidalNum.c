@@ -6,7 +6,9 @@ int main() {
 
     printf("Please input an integer: ");
     scanf("%d", &n);
-
+    if(n==0){
+	    printf("0");
+    }
     for (int i = 1; i <= n; i++) {
         sum += i * i;
         if (i == n) {
