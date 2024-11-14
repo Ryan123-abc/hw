@@ -6,7 +6,7 @@ int main() {
 	printf("Please input two number(a,b): ");
 	scanf("%d,%d", &a, &b);
 
-	if (a <= 0 || b <= 0 || 10000 < a || 10000 < b){
+	if (a <= 0 || b <= 0 || 10000 <= a || 10000 <= b){
 		printf("Error!\n");
         	return 0;
     	}
