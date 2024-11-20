@@ -10,11 +10,7 @@ int main(){
 		return 0;
 	}
 	
-	int new = 1, grow = 0, matured = 0; 
-	int total = 1;
-
     	int new[month], grow[month], matured[month], total[month];
-	char new1[month];
     
     	new[0] = 1;
     	grow[0] = 0;
@@ -22,21 +18,16 @@ int main(){
     	total[0] = 1;
 
     	for (int i = 1; i < month; i++) {
-        	new = matured;
-        	grow = new[i - 1];
-        	matured = grow + matured[i - 1];
-        	total = new + grow + matured;
+        	matured[i] = grow[i-1] + matured[i - 1];
+        	new[i] = matured[i];
+        	grow[i] = new[i - 1];
+        	total[i] = new[i] + grow[i] + matured[i];
+	}
 
-        	new[i] = new;
-        	grow[i] = grow;
-        	matured[i] = matured;
-        	total[i] = total;
-    	}
+    	printf("|(n)th     |newborn   |growing   |matured   |total     \n");
 
-    	printf("|(n)th     |newborn   |growing   |matured   |total     |\n");
-
-    	for (int i = 0; i < n; i++) {
-        	printf("|%-10d|%-10d|%-10d|%-10d|%-10d|\n", 
+    	for (int i = 0; i < month; i++) {
+        	printf("|%-10d|%-10d|%-10d|%-10d|%-10d\n", 
                	i + 1, new[i], grow[i], matured[i], total[i]);
     	}	
 
