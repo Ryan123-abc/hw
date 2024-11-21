@@ -8,7 +8,7 @@ int main(){
 		printf("Input Error\n");
 		return 0;
 	}
-	if(a==2){
+	if(a==1 || a==2){
 		printf("There isn't any prime number between 1 and 2.\n");
 		return 0;
 	}
