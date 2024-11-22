@@ -6,6 +6,7 @@ int main(){
 	scanf("%d,%d", &a, &b);
 	
 	int num1, num2;
+
 	if(a>b){
 		num1 = a;
 		num2 = b;
