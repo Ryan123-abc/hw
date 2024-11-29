@@ -2,7 +2,7 @@
 
 int main(){
 	int a, b;
-	printf("Please input two number(a,b): ");
+	printf("Please input two numbers(a,b): ");
 	scanf("%d,%d", &a, &b);
 	
 	int num1, num2;
