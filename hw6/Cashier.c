@@ -8,7 +8,7 @@ int main(){
 	scanf("%d", &b);
 	
 	if(a<1||b<1){
-		printf("Invalid input\n");
+		printf("Invalid value\n");
 		return 0;
 	}else if(b-a<0){
 		printf("Invalid input\n");
