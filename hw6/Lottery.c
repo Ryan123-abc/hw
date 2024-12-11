@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include <string.h>
 
 int match(const char *a, const char *num, int length) {
@@ -10,28 +11,34 @@ int match(const char *a, const char *num, int length) {
     	return 1; 
 }
 
+int compare(const void*a, const void*b){
+	return strcmp((const char*)a, (const char*)b);
+}
+
 int main() {
-    	char a[5][9];  
-    	char num[100][11]; 
+    	char a[5][8];  
+    	char num[100][10]; 
 
     	for (int i = 0; i < 5; i++) {
-        	scanf("%8s", a[i]);
+        	scanf("%s", a[i]);
     	}
 
     	for (int i = 0; i < 100; i++) {
-        	scanf("%10s", num[i]);
+        	scanf("%s", num[i]);
     	}
 
     	int prize[] = {10000000, 2000000, 200000, 40000, 10000, 4000, 1000, 200};
     	int prize_length[] = {8, 8, 8, 7, 6, 5, 4, 3};
 
-    	char win[100];
+	int vis[100] = {0};
+    	int win[100] = {0};
     	int win_prize[100] = {0};  
 
     	for (int i = 0; i < 100; i++) {
         	for (int j = 0; j < 5; j++) {
             		for (int k = 0; k < 8; k++) {
-                		if (match(a[j], num[i], prize_length[k])) {
+                		if (!vis[i] && match(a[j], num[i], prize_length[k])) {
+					vis[i] = 1;
                     			win[i] = i;  
                     			win_prize[i] = prize[k];
                 		}
@@ -50,7 +57,9 @@ int main() {
                 		int temp_index = win[j];
                 		win[j] = win[j + 1];
                 		win[j + 1] = temp_index;
-            		}
+            		}else if (win_prize[j] < win_prize[j + 1]) {
+				qsort( win[j], 10, sizeof(win[0]), compare);
+			}
         	}
     	}
 
