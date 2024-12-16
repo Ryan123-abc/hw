@@ -17,7 +17,7 @@ int compare(const void*a, const void*b){
 
 int main() {
     	char a[5][8];  
-    	char num[100][12]; 
+	char num[100][11]; 
 
     	for (int i = 0; i < 5; i++) {
         	scanf("%s", a[i]);
@@ -35,9 +35,31 @@ int main() {
     	int win_prize[100] = {0};  
 
 	qsort(num, 100, sizeof(num[0]), compare);
+	
+	char number[100][9]={0};
+	for (int i = 0; i < 100; i++) {
+		memmove(number[i], num[i]+2, 9);
+	}
+	
+	for (int i = 0; i < 100; i++) {
+		if (!vis[i] && number[i] == a[0]) {
+			vis[i] = 1;
+			win[i] = i;
+			win_prize[i] = 10000000;
+		}
+	}
+	
 
+	for (int i = 0; i < 100; i++) {
+		if (!vis[i] && number[i] == a[1]) {
+			vis[i] = 1;
+			win[i] = i;
+			win_prize[i] = 2000000;
+		}
+	}
+	
     	for (int i = 0; i < 100; i++) {
-        	for (int j = 0; j < 5; j++) {
+        	for (int j = 2; j < 5; j++) {
             		for (int k = 0; k < 8; k++) {
                 		if (!vis[i] && match(a[j], num[i], prize_length[k])) {
 					vis[i] = 1;
