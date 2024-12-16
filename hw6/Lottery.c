@@ -42,7 +42,15 @@ int main() {
 	}
 	
 	for (int i = 0; i < 100; i++) {
-		if (!vis[i] && number[i] == a[0]) {
+		if (vis[i]) continue;
+		int on=1;
+		for (int j = 0; j < 8; j++) {
+			if (a[0][j] != number[i][j]) {
+				on = 0;
+				break;
+			}
+		}
+		if (on) {
 			vis[i] = 1;
 			win[i] = i;
 			win_prize[i] = 10000000;
@@ -51,7 +59,15 @@ int main() {
 	
 
 	for (int i = 0; i < 100; i++) {
-		if (!vis[i] && number[i] == a[1]) {
+		if (vis[i]) continue;
+		int on = 1;
+		for (int j = 0; j < 8; j++) {
+			if (a[1][j] != number[i][j]) {
+				on = 0;
+				break;
+			}
+		}
+		if (on) {
 			vis[i] = 1;
 			win[i] = i;
 			win_prize[i] = 2000000;
